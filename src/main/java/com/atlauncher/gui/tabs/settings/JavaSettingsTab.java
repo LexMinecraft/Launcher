@@ -107,7 +107,6 @@ public class JavaSettingsTab extends AbstractSettingsTab implements Relocalizati
         }
         initialMemory.setSelectedItem(App.settings.getInitialMemory() + " MB");
         initialMemory.addItemListener(new ItemListener() {
-
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -148,7 +147,6 @@ public class JavaSettingsTab extends AbstractSettingsTab implements Relocalizati
         }
         maximumMemory.setSelectedItem(App.settings.getMaximumMemory() + " MB");
         maximumMemory.addItemListener(new ItemListener() {
-
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -259,7 +257,6 @@ public class JavaSettingsTab extends AbstractSettingsTab implements Relocalizati
         add(javaPathPanel, gbc);
 
         // Java Paramaters
-
         gbc.gridx = 0;
         gbc.gridy++;
         gbc.gridwidth = 1;
@@ -287,7 +284,6 @@ public class JavaSettingsTab extends AbstractSettingsTab implements Relocalizati
         add(javaParametersPanel, gbc);
 
         // Start Minecraft Maximised
-
         gbc.gridx = 0;
         gbc.gridy++;
         gbc.insets = LABEL_INSETS;
@@ -307,7 +303,6 @@ public class JavaSettingsTab extends AbstractSettingsTab implements Relocalizati
         add(startMinecraftMaximised, gbc);
 
         // Save Custom Mods
-
         gbc.gridx = 0;
         gbc.gridy++;
         gbc.insets = LABEL_INSETS;
