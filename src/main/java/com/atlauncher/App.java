@@ -46,7 +46,6 @@ import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.swing.InputMap;
-import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
@@ -116,28 +115,10 @@ public class App {
                 }
             }
         }
-
-        File config = new File(Utils.getCoreGracefully(), "Configs");
-        if (!config.exists()) {
-            int files = config.getParentFile().list().length;
-            if (files > 1) {
-                String[] options = {"Yes It's Fine", "Whoops. I'll Change That Now"};
-                int ret = JOptionPane.showOptionDialog(null, "<html><p align=\"center\">I've detected that you may " +
-                                "not have installed this " + "in the right location.<br/><br/>The exe or jar file" +
-                                "should " +
-                                "be placed in it's own folder with nothing else " + "in it<br/><br/>Are you 100% sure" +
-                                " that's " +
-                                "not have installed this " + "in the right location.<br/><br/>The exe or jar file" +
-                                "should " +
-                                "be placed in it's own folder with nothing else " + "in it<br/><br/>Are you 100% sure" +
-                                " that's " +
-                                "what you've" + "done?</p></html>", "Warning", JOptionPane.DEFAULT_OPTION,
-                        JOptionPane.ERROR_MESSAGE, null, options, options[0]);
-                if (ret != 0) {
-                    System.exit(0);
-                }
-            }
-        }
+        
+        // Create .lexlauncher directory
+        Utils.getCoreGracefully().mkdir();
+        
         settings = new Settings(); // Setup the Settings and wait for it to finish
         final SplashScreen ss = new SplashScreen();
         SwingUtilities.invokeLater(new Runnable() {

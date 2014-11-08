@@ -226,7 +226,6 @@ public class Settings {
         if (hasUpdatedFiles()) {
             downloadUpdatedFiles(); // Downloads updated files on the server
         }
-
         checkForLauncherUpdate();
         loadNews(); // Load the news
         this.languageLoaded = true; // Languages are now loaded
@@ -296,11 +295,9 @@ public class Settings {
         if (this.advancedBackup) {
             dropbox = new DropboxSync();
         }
-
         if (!this.hadPasswordDialog) {
             checkAccounts(); // Check accounts with stored passwords
         }
-
         if (this.enableServerChecker) {
             this.startCheckingServers();
         }
@@ -646,7 +643,7 @@ public class Settings {
     private void checkFolders() {
         File[] files = {backupsDir, configsDir, themesDir, jsonDir, commonConfigsDir, imagesDir, skinsDir, jarsDir,
                 resourcesDir, librariesDir, languagesDir, downloadsDir, instancesDir, serversDir, tempDir,
-                failedDownloadsDir};
+                failedDownloadsDir, logsDir};
         for (File file : files) {
             if (!file.exists()) {
                 file.mkdir();
@@ -655,7 +652,6 @@ public class Settings {
                 if (file.delete()) {
                     file.mkdir();
                 }
-
             }
         }
     }
@@ -1170,7 +1166,7 @@ public class Settings {
                     this.account = getAccountByName(lastAccountTemp);
                 } else {
                     LogManager.warn("The Account " + lastAccountTemp + " is no longer available. Logging out of " +
-                            "Account!");
+                            "the Account!");
                     this.account = null; // Account not found
                 }
             }

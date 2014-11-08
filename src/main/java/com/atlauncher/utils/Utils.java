@@ -25,6 +25,7 @@ import com.atlauncher.data.mojang.ExtractRule;
 import com.atlauncher.data.mojang.OperatingSystem;
 import com.atlauncher.data.openmods.OpenEyeReportResponse;
 import com.atlauncher.evnt.LogEvent.LogType;
+
 import org.tukaani.xz.XZInputStream;
 
 import javax.crypto.BadPaddingException;
@@ -34,6 +35,7 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.imageio.ImageIO;
 import javax.net.ssl.HttpsURLConnection;
 import javax.swing.ImageIcon;
+
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -70,7 +72,6 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.Proxy;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -130,17 +131,7 @@ public class Utils {
     }
 
     public static File getCoreGracefully() {
-        if (Utils.isLinux()) {
-            try {
-                return new File(App.class.getProtectionDomain().getCodeSource().getLocation().toURI()
-                        .getSchemeSpecificPart()).getParentFile();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-                return new File(System.getProperty("user.dir"), "LexLauncher");
-            }
-        } else {
-            return new File(System.getProperty("user.dir"));
-        }
+    	return new File(System.getProperty("user.home"), ".lexlauncher");
     }
 
     /**
