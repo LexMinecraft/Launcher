@@ -279,10 +279,8 @@ public class InstanceInstallerDialog extends JDialog {
                             title = pack.getName() + " " + version.getVersion() + " " + Language.INSTANCE.localize
                                     ("common.not") + " " + ((isReinstall) ? Language.INSTANCE.localize("common" + "" +
                                     ".reinstalled") : Language.INSTANCE.localize("common.installed"));
-                            if (isReinstall) {
-                                if (shouldCoruptInstance()) {
-                                    App.settings.setInstanceUnplayable(instance);
-                                }
+                            if (isReinstall && shouldCoruptInstance()) {
+                            	App.settings.setInstanceUnplayable(instance);
                             }
                         } else {
                             try {

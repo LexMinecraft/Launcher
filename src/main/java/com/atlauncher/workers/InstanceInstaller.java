@@ -1095,7 +1095,6 @@ public class InstanceInstaller extends SwingWorker<Boolean, Void> {
 
         for (final Downloadable download : downloads) {
             executor.execute(new Runnable() {
-
                 @Override
                 public void run() {
                     if (download.needToDownload()) {
@@ -2156,10 +2155,10 @@ public class InstanceInstaller extends SwingWorker<Boolean, Void> {
                 return installUsingJSON();
             } catch (JsonSyntaxException e) {
                 App.settings.logStackTrace("Couldn't read JSON of pack! Report this to the pack's developer/s and " +
-                        "NOT" + " ATLauncher!", e);
+                        "NOT" + " LexLauncher!", e);
             } catch (JsonParseException e) {
                 App.settings.logStackTrace("Couldn't parse JSON of pack! Report this to the pack's developer/s and "
-                        + "NOT ATLauncher!", e);
+                        + "NOT LexLauncher!", e);
             }
         }
         return installUsingXML();

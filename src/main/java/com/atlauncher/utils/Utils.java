@@ -136,7 +136,7 @@ public class Utils {
                         .getSchemeSpecificPart()).getParentFile();
             } catch (URISyntaxException e) {
                 e.printStackTrace();
-                return new File(System.getProperty("user.dir"), "ATLauncher");
+                return new File(System.getProperty("user.dir"), "LexLauncher");
             }
         } else {
             return new File(System.getProperty("user.dir"));
@@ -462,7 +462,6 @@ public class Utils {
             String urlParameters = "";
             urlParameters += "title=" + URLEncoder.encode(title, "ISO-8859-1") + "&";
             urlParameters += "language=" + URLEncoder.encode("text", "ISO-8859-1") + "&";
-            urlParameters += "private=" + URLEncoder.encode("1", "ISO-8859-1") + "&";
             urlParameters += "text=" + URLEncoder.encode(log, "ISO-8859-1");
             URL url = new URL(Constants.PASTE_API_URL);
             URLConnection conn = url.openConnection();

@@ -116,7 +116,6 @@ public class NetworkSettingsTab extends AbstractSettingsTab implements Relocaliz
             enableProxy.setSelected(true);
         }
         enableProxy.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!enableProxy.isSelected()) {

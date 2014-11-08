@@ -112,7 +112,7 @@ public class App {
                 } else if (parts[0].equalsIgnoreCase("--skip-minecraft-version-downloads")) {
                     skipMinecraftVersionDownloads = true;
                     LogManager.debug("Skipping Minecraft version downloads! This may cause issues, only use it as " +
-                            "directed by ATLauncher staff!");
+                            "directed by LexLauncher staff!");
                 }
             }
         }
@@ -157,7 +157,7 @@ public class App {
             }
         }
 
-        LogManager.info("ATLauncher Version: " + Constants.VERSION);
+        LogManager.info("LexLauncher Version: " + Constants.VERSION);
         LogManager.info("Operating System: " + System.getProperty("os.name"));
         LogManager.info("RAM Available: " + Utils.getMaximumRam() + "MB");
         if (settings.isUsingCustomJavaPath()) {
@@ -177,7 +177,7 @@ public class App {
 
         if (Utils.isMac()) {
             System.setProperty("apple.laf.useScreenMenuBar", "true");
-            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "ATLauncher " + Constants.VERSION);
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "LexLauncher " + Constants.VERSION);
             try {
                 Class util = Class.forName("com.apple.eawt.Application");
                 Method getApplication = util.getMethod("getApplication", new Class[0]);
@@ -277,7 +277,7 @@ public class App {
                     }
                 }
             });
-            trayIcon.setToolTip("ATLauncher");
+            trayIcon.setToolTip("LexLauncher");
             trayIcon.setImageAutoSize(true);
 
             tray.add(trayIcon);
@@ -286,7 +286,7 @@ public class App {
 
     public static void integrate() {
         try {
-            File f = new File(new File(System.getProperty("user.home")), ".atl.properties");
+            File f = new File(new File(System.getProperty("user.home")), ".lexlaunch.properties");
             if (!f.exists()) {
                 f.createNewFile();
             }

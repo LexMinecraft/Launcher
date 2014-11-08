@@ -34,10 +34,10 @@ public final class LoggingThread extends Thread {
 
     public LoggingThread(BlockingQueue<LogEvent> queue) {
         this.queue = queue;
-        this.setName("ATL-Logging-Thread");
+        this.setName("Lex-Logging-Thread");
         try {
-            this.writer = new LogEventWriter(new FileWriter(new File(App.settings.getBaseDir(),
-                    "ATLauncher-Log-1.txt")));
+            this.writer = new LogEventWriter(new FileWriter(new File(App.settings.getLogsDir(),
+            		"lexlauncher_%D.log")));
             this.writer.write("Generated on " + Timestamper.now() + "\n");
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 @Override

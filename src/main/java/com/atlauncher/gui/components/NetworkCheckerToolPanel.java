@@ -133,18 +133,18 @@ public class NetworkCheckerToolPanel extends AbstractToolPanel implements Action
                         dialog.doneTask();
                     }
 
-                    String result = Utils.uploadPaste("ATLauncher Network Test Log", results.toString());
+                    String result = Utils.uploadPaste("LexLauncher Network Test Log", results.toString());
                     if (result.contains(Constants.PASTE_CHECK_URL)) {
                         try {
                             Map<String, String> data = new HashMap<String, String>();
                             data.put("log", result);
                             Utils.sendAPICall("networktest/", data);
                         } catch (IOException e1) {
-                            App.settings.logStackTrace("Network Test failed to submit to ATLauncher!", e1);
+                            App.settings.logStackTrace("Network Test failed to submit to LexLauncher!", e1);
                             dialog.setReturnValue(false);
                         }
                     } else {
-                        LogManager.error("Network Test failed to submit to ATLauncher!");
+                        LogManager.error("Network Test failed to submit to LexLauncher!");
                         dialog.setReturnValue(false);
                     }
 
@@ -157,7 +157,7 @@ public class NetworkCheckerToolPanel extends AbstractToolPanel implements Action
             if (dialog.getReturnValue() == null || !(Boolean) dialog.getReturnValue()) {
                 LogManager.error("Network Test failed to run!");
             } else {
-                LogManager.info("Network Test ran and submitted to ATLauncher!");
+                LogManager.info("Network Test ran and submitted to LexLauncher!");
                 String[] options2 = {Language.INSTANCE.localize("common.ok")};
                 JOptionPane.showOptionDialog(App.settings.getParent(), "<html><p align=\"center\">" + Language
                         .INSTANCE.localizeWithReplace("tools.networkheckercomplete", "<br/><br/>") +

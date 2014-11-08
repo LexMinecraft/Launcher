@@ -28,7 +28,7 @@ import javax.swing.BorderFactory;
 import javax.swing.UIManager;
 
 public final class Theme {
-    public static final Theme DEFAULT_THEME = new Theme("ATLauncher", "RyanTheAllmighty", true, new Color(40, 45,
+    public static final Theme DEFAULT_THEME = new Theme("LexLauncher", "Lexteam", false, new Color(40, 45,
             50), new Color(255, 255, 255), new Color(0, 0, 0), new Color(0, 136, 204), new Color(100, 100, 200),
             new Color(80, 170, 107), new Color(50, 55, 60), new Color(50, 55, 60), new Color(30, 35, 40),
             new Color(255, 255, 255), new Color(255, 0, 0), new Color(255, 255, 255), new Color(137, 194, 54),

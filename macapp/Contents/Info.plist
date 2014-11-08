@@ -3,7 +3,7 @@
 <plist version="0.9">
 <dict>
 	<key>CFBundleName</key>
-	<string>ATLauncher</string>
+	<string>LexLauncher</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.atlauncher.App</string>
 	<key>CFBundleVersion</key>

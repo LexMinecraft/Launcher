@@ -67,7 +67,7 @@ implements RelocalizationListener{
 
         App.settings.setParentFrame(this);
         setSize(new Dimension(1000, 575));
-        setTitle("ATLauncher " + Constants.VERSION);
+        setTitle("LexLauncher " + Constants.VERSION);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -101,7 +101,7 @@ implements RelocalizationListener{
     }
 
     public void updateTitle(String str){
-        setTitle("ATLauncher " + Constants.VERSION + " - " + str);
+        setTitle("LexLauncher " + Constants.VERSION + " - " + str);
     }
 
     /**

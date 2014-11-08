@@ -369,7 +369,7 @@ public class LegacyMCLauncher {
                 try {
                     Class<?> MCAppletClass = cl.loadClass("net.minecraft.client.MinecraftApplet");
                     Applet mcappl = (Applet) MCAppletClass.newInstance();
-                    MCFrame mcWindow = new MCFrame("ATLauncher - " + instanceName);
+                    MCFrame mcWindow = new MCFrame("LexLauncher - " + instanceName);
                     mcWindow.start(mcappl, username, session, winSize, maximize);
                 } catch (InstantiationException e) {
                     System.out.println("Applet wrapper failed! Falling back " + "to compatibility mode.");

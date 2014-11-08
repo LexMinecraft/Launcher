@@ -156,7 +156,7 @@ public class Settings {
     private File baseDir, backupsDir, configsDir, themesDir, jsonDir, versionsDir, imagesDir, skinsDir, jarsDir,
             commonConfigsDir, resourcesDir, librariesDir, languagesDir, downloadsDir, usersDownloadsFolder,
             instancesDir, serversDir, tempDir, failedDownloadsDir, instancesDataFile, checkingServersFile,
-            userDataFile, propertiesFile;
+            userDataFile, propertiesFile, logsDir;
     // Launcher Settings
     private JFrame parent; // Parent JFrame of the actual Launcher
     private Properties properties = new Properties(); // Properties to store everything in
@@ -186,7 +186,6 @@ public class Settings {
         setupFiles(); // Setup all the file and directory variables
         checkFolders(); // Checks the setup of the folders and makes sure they're there
         clearTempDir(); // Cleans all files in the Temp Dir
-        rotateLogFiles(); // Rotates the log files
         loadStartingProperties(); // Get users Console preference and Java Path
     }
 
@@ -198,6 +197,7 @@ public class Settings {
     public void setupFiles() {
         baseDir = Utils.getCoreGracefully();
         usersDownloadsFolder = new File(System.getProperty("user.home"), "Downloads");
+        logsDir = new File(baseDir, "Logs");
         backupsDir = new File(baseDir, "Backups");
         configsDir = new File(baseDir, "Configs");
         themesDir = new File(configsDir, "Themes");
@@ -218,7 +218,7 @@ public class Settings {
         instancesDataFile = new File(configsDir, "instancesdata");
         checkingServersFile = new File(configsDir, "checkingservers.json");
         userDataFile = new File(configsDir, "userdata");
-        propertiesFile = new File(configsDir, "ATLauncher.conf");
+        propertiesFile = new File(configsDir, "LexLauncher.conf");
     }
 
     public void loadEverything() {
@@ -230,46 +230,18 @@ public class Settings {
         }
 
         checkForLauncherUpdate();
-
         loadNews(); // Load the news
-
         this.languageLoaded = true; // Languages are now loaded
-
         loadMinecraftVersions(); // Load info about the different Minecraft versions
-
         loadPacks(); // Load the Packs available in the Launcher
-
         loadUsers(); // Load the Testers and Allowed Players for the packs
-
         loadInstances(); // Load the users installed Instances
-
         loadAccounts(); // Load the saved Accounts
-
         loadCheckingServers(); // Load the saved servers we're checking with the tool
-
         loadProperties(); // Load the users Properties
-
         console.setupLanguage(); // Setup language on the console
-
         checkResources(); // Check for new format of resources
-
         checkAccountUUIDs(); // Check for accounts UUID's and add them if necessary
-
-        LogManager.debug("Checking for access to master server");
-        OUTER:
-        for (Pack pack : this.packs) {
-            if (pack.isTester()) {
-                for (Server server : this.servers) {
-                    if (server.getName().equals("Master Server (Testing Only)")) {
-                        server.setUserSelectable(true);
-                        LogManager.debug("Access to master server granted");
-                        break OUTER; // Don't need to check anymore so break the outer loop
-                    }
-                }
-            }
-        }
-        LogManager.debug("Finished checking for access to master server");
-
         loadServerProperty(true); // Get users Server preference
 
         if (Utils.isWindows() && this.javaPath.contains("x86")) {
@@ -501,7 +473,7 @@ public class Settings {
             }
             File newFile = new File(getTempDir(), saveAs);
             LogManager.info("Downloading Launcher Update");
-            Downloadable update = new Downloadable("ATLauncher." + toget, newFile, null, null, true);
+            Downloadable update = new Downloadable("LexLauncher." + toget, newFile, null, null, true);
             update.download(false);
             runUpdate(path, newFile.getAbsolutePath());
         } catch (IOException e) {
@@ -658,7 +630,7 @@ public class Settings {
                 int ret = JOptionPane.showOptionDialog(App.settings.getParent(), "<html><p align=\"center\">Launcher " +
                                 "Update failed. Please click Ok to close " + "the launcher and open up the downloads " +
                                 "page" +
-                                ".<br/><br/>Download " + "the update and replace the old ATLauncher file" +
+                                ".<br/><br/>Download " + "the update and replace the old LexLauncher file" +
                                 ".</p></html>", "Update Failed!", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.ERROR_MESSAGE, null, options, options[0]);
                 if (ret == 0) {
@@ -697,6 +669,10 @@ public class Settings {
      */
     public File getBaseDir() {
         return this.baseDir;
+    }
+    
+    public File getLogsDir() {
+    	return this.logsDir;
     }
 
     /**
@@ -875,32 +851,6 @@ public class Settings {
         Utils.deleteContents(getTempDir());
     }
 
-    public void rotateLogFiles() {
-        File logFile1 = new File(getBaseDir(), "ATLauncher-Log-1.txt");
-        File logFile2 = new File(getBaseDir(), "ATLauncher-Log-2.txt");
-        File logFile3 = new File(getBaseDir(), "ATLauncher-Log-3.txt");
-        if (logFile3.exists()) {
-            Utils.delete(logFile3);
-        }
-        if (logFile2.exists()) {
-            logFile2.renameTo(logFile3);
-        }
-        if (logFile1.exists()) {
-            logFile1.renameTo(logFile2);
-        }
-        try {
-            logFile1.createNewFile();
-        } catch (IOException e) {
-            String[] options = {"OK"};
-            JOptionPane.showOptionDialog(null, "<html><p align=\"center\">Cannot create the log file.<br/><br/>Make " +
-                            "sure" + " you are running the Launcher from somewhere with<br/>write" + " permissions " +
-                            "for your " +
-                            "user account such as your Home/Users folder" + " or desktop.</p></html>", "Warning",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
-            System.exit(0);
-        }
-    }
-
     /**
      * Returns the instancesdata file
      *
@@ -975,7 +925,7 @@ public class Settings {
         }
         try {
             this.properties.load(new FileInputStream(propertiesFile));
-            this.theme = properties.getProperty("theme", "ATLauncher");
+            this.theme = properties.getProperty("theme", "LexLauncher");
             this.dateFormat = properties.getProperty("dateformat", "dd/M/yyy");
             if (!this.dateFormat.equalsIgnoreCase("dd/M/yyy") && !this.dateFormat.equalsIgnoreCase("M/dd/yyy") &&
                     !this.dateFormat.equalsIgnoreCase("yyy/M/dd")) {
@@ -1206,7 +1156,7 @@ public class Settings {
                 this.concurrentConnections = 8;
             }
 
-            this.theme = properties.getProperty("theme", "ATLauncher");
+            this.theme = properties.getProperty("theme", "LexLauncher");
 
             this.dateFormat = properties.getProperty("dateformat", "dd/M/yyy");
             if (!this.dateFormat.equalsIgnoreCase("dd/M/yyy") && !this.dateFormat.equalsIgnoreCase("M/dd/yyy") &&
@@ -1288,7 +1238,7 @@ public class Settings {
             properties.setProperty("autobackup", this.autoBackup ? "true" : "false");
             properties.setProperty("notifybackup", this.notifyBackup ? "true" : "false");
             properties.setProperty("dropboxlocation", this.dropboxFolderLocation);
-            this.properties.store(new FileOutputStream(propertiesFile), "ATLauncher Settings");
+            this.properties.store(new FileOutputStream(propertiesFile), "LexLauncher Settings");
         } catch (FileNotFoundException e) {
             logStackTrace(e);
         } catch (IOException e) {
@@ -2807,7 +2757,7 @@ public class Settings {
     }
 
     public String getUserAgent() {
-        return this.userAgent + " ATLauncher/" + Constants.VERSION;
+        return this.userAgent + " LexLauncher/" + Constants.VERSION;
     }
 
     /**

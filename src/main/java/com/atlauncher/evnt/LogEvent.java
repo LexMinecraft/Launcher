@@ -89,6 +89,5 @@ public final class LogEvent {
                 }
             }
         }
-
     }
 }

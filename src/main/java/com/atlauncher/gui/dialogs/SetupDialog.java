@@ -55,7 +55,7 @@ public class SetupDialog extends JDialog {
     private JButton saveButton;
 
     public SetupDialog() {
-        super(null, "ATLauncher Setup", ModalityType.APPLICATION_MODAL);
+        super(null, "LexLauncher Setup", ModalityType.APPLICATION_MODAL);
         this.requestFocus();
         this.setSize(400, 200);
         setLocationRelativeTo(null);
@@ -66,7 +66,7 @@ public class SetupDialog extends JDialog {
 
         // Top Panel Stuff
         top = new JPanel();
-        top.add(new JLabel("Setting up ATLauncher"));
+        top.add(new JLabel("Setting up LexLauncher"));
 
         // Middle Panel Stuff
         middle = new JPanel();
