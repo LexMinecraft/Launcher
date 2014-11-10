@@ -17,17 +17,6 @@
  */
 package com.atlauncher.gui.dialogs;
 
-import com.atlauncher.App;
-import com.atlauncher.data.Language;
-import com.atlauncher.data.Mod;
-import com.atlauncher.data.Pack;
-import com.atlauncher.gui.card.ModCard;
-
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -41,6 +30,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
+import com.atlauncher.App;
+import com.atlauncher.data.Language;
+import com.atlauncher.data.Mod;
+import com.atlauncher.data.Pack;
+import com.atlauncher.gui.card.ModCard;
+import com.atlauncher.utils.Utils;
+
 public final class ViewModsDialog extends JDialog {
     private final Pack pack;
     private final JPanel contentPanel = new JPanel(new GridBagLayout());
@@ -53,6 +55,7 @@ public final class ViewModsDialog extends JDialog {
                 ModalityType.APPLICATION_MODAL);
         this.pack = pack;
 
+        this.setIconImage(Utils.getImage("/assets/image/Icon.png"));
         this.setPreferredSize(new Dimension(550, 450));
         this.setResizable(false);
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

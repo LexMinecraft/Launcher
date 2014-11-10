@@ -17,15 +17,16 @@
  */
 package com.atlauncher.data;
 
+import java.awt.Color;
+import java.io.File;
+import java.io.FilenameFilter;
+
+import javax.swing.JOptionPane;
+
 import com.atlauncher.App;
 import com.atlauncher.LogManager;
 import com.atlauncher.utils.Utils;
 import com.atlauncher.workers.InstanceInstaller;
-
-import javax.swing.JOptionPane;
-import java.awt.Color;
-import java.io.File;
-import java.io.FilenameFilter;
 
 public class Mod {
     private String name;

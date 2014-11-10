@@ -17,14 +17,15 @@
  */
 package com.atlauncher.gui.tabs;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+
 import com.atlauncher.data.Language;
 import com.atlauncher.gui.components.BlankToolPanel;
 import com.atlauncher.gui.components.NetworkCheckerToolPanel;
 import com.atlauncher.gui.components.ServerCheckerToolPanel;
-
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 
 @SuppressWarnings("serial")
 public class ToolsTab extends JPanel implements Tab {

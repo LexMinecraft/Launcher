@@ -17,17 +17,6 @@
  */
 package com.atlauncher.gui.components;
 
-import com.atlauncher.App;
-import com.atlauncher.LogManager;
-import com.atlauncher.data.Constants;
-import com.atlauncher.data.Language;
-import com.atlauncher.evnt.listener.RelocalizationListener;
-import com.atlauncher.evnt.manager.RelocalizationManager;
-import com.atlauncher.thread.PasteUpload;
-
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
@@ -35,6 +24,18 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import com.atlauncher.App;
+import com.atlauncher.LogManager;
+import com.atlauncher.data.Constants;
+import com.atlauncher.data.Language;
+import com.atlauncher.evnt.listener.RelocalizationListener;
+import com.atlauncher.evnt.manager.RelocalizationManager;
+import com.atlauncher.thread.PasteUpload;
 
 public class ConsoleBottomBar extends BottomBar implements RelocalizationListener {
 

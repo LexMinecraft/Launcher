@@ -17,6 +17,18 @@
  */
 package com.atlauncher.gui.components;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.border.BevelBorder;
+
 import com.atlauncher.App;
 import com.atlauncher.LogManager;
 import com.atlauncher.data.Constants;
@@ -27,17 +39,6 @@ import com.atlauncher.evnt.listener.SettingsListener;
 import com.atlauncher.evnt.manager.SettingsManager;
 import com.atlauncher.gui.dialogs.ProgressDialog;
 import com.atlauncher.utils.Utils;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.border.BevelBorder;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class NetworkCheckerToolPanel extends AbstractToolPanel implements ActionListener, SettingsListener {
     /**

@@ -17,25 +17,6 @@
  */
 package com.atlauncher.utils;
 
-import com.atlauncher.App;
-import com.atlauncher.LogManager;
-import com.atlauncher.data.Constants;
-import com.atlauncher.data.Settings;
-import com.atlauncher.data.mojang.ExtractRule;
-import com.atlauncher.data.mojang.OperatingSystem;
-import com.atlauncher.data.openmods.OpenEyeReportResponse;
-import com.atlauncher.evnt.LogEvent.LogType;
-
-import org.tukaani.xz.XZInputStream;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.spec.SecretKeySpec;
-import javax.imageio.ImageIO;
-import javax.net.ssl.HttpsURLConnection;
-import javax.swing.ImageIcon;
-
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -97,6 +78,25 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.spec.SecretKeySpec;
+import javax.imageio.ImageIO;
+import javax.net.ssl.HttpsURLConnection;
+import javax.swing.ImageIcon;
+
+import org.tukaani.xz.XZInputStream;
+
+import com.atlauncher.App;
+import com.atlauncher.LogManager;
+import com.atlauncher.data.Constants;
+import com.atlauncher.data.Settings;
+import com.atlauncher.data.mojang.ExtractRule;
+import com.atlauncher.data.mojang.OperatingSystem;
+import com.atlauncher.data.openmods.OpenEyeReportResponse;
+import com.atlauncher.evnt.LogEvent.LogType;
+
 public class Utils {
     public static String error(Throwable t) {
         StringBuilder builder = new StringBuilder();
@@ -145,7 +145,6 @@ public class Utils {
             LogManager.error("Unable to load file " + file.getAbsolutePath());
             return null;
         }
-
         return new ImageIcon(file.getAbsolutePath());
     }
 
@@ -180,7 +179,6 @@ public class Utils {
             if (stream == null) {
                 throw new NullPointerException("Stream == null");
             }
-
             return ImageIO.read(stream);
         } catch (Exception ex) {
             ex.printStackTrace(System.err);

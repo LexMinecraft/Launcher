@@ -17,13 +17,13 @@
  */
 package com.atlauncher.data.mojang.auth;
 
-import com.atlauncher.App;
-import com.atlauncher.data.mojang.Property;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.atlauncher.App;
+import com.atlauncher.data.mojang.Property;
 
 public class AuthenticationResponse {
 

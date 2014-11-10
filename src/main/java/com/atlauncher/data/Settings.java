@@ -17,38 +17,6 @@
  */
 package com.atlauncher.data;
 
-import com.atlauncher.App;
-import com.atlauncher.LogManager;
-import com.atlauncher.Update;
-import com.atlauncher.adapter.ColorTypeAdapter;
-import com.atlauncher.data.mojang.DateTypeAdapter;
-import com.atlauncher.data.mojang.EnumTypeAdapterFactory;
-import com.atlauncher.data.mojang.FileTypeAdapter;
-import com.atlauncher.exceptions.InvalidMinecraftVersion;
-import com.atlauncher.exceptions.InvalidPack;
-import com.atlauncher.gui.LauncherConsole;
-import com.atlauncher.gui.components.LauncherBottomBar;
-import com.atlauncher.gui.dialogs.ProgressDialog;
-import com.atlauncher.gui.tabs.InstancesTab;
-import com.atlauncher.gui.tabs.NewsTab;
-import com.atlauncher.gui.tabs.PacksTab;
-import com.atlauncher.utils.Authentication;
-import com.atlauncher.utils.Timestamper;
-import com.atlauncher.utils.Utils;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Dialog.ModalityType;
 import java.awt.FlowLayout;
@@ -87,6 +55,40 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.atlauncher.App;
+import com.atlauncher.LogManager;
+import com.atlauncher.Update;
+import com.atlauncher.adapter.ColorTypeAdapter;
+import com.atlauncher.data.mojang.DateTypeAdapter;
+import com.atlauncher.data.mojang.EnumTypeAdapterFactory;
+import com.atlauncher.data.mojang.FileTypeAdapter;
+import com.atlauncher.exceptions.InvalidMinecraftVersion;
+import com.atlauncher.exceptions.InvalidPack;
+import com.atlauncher.gui.LauncherConsole;
+import com.atlauncher.gui.components.LauncherBottomBar;
+import com.atlauncher.gui.dialogs.ProgressDialog;
+import com.atlauncher.gui.tabs.InstancesTab;
+import com.atlauncher.gui.tabs.NewsTab;
+import com.atlauncher.gui.tabs.PacksTab;
+import com.atlauncher.utils.Authentication;
+import com.atlauncher.utils.Timestamper;
+import com.atlauncher.utils.Utils;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * Settings class for storing all data for the Launcher and the settings of the user

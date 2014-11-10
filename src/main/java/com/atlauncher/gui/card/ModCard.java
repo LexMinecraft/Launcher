@@ -18,9 +18,6 @@
 
 package com.atlauncher.gui.card;
 
-import com.atlauncher.data.Mod;
-import com.atlauncher.utils.Utils;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -28,7 +25,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JPanel;
+
+import com.atlauncher.data.Mod;
+import com.atlauncher.utils.Utils;
 
 public final class ModCard extends JPanel {
     public final Mod mod;

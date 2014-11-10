@@ -17,14 +17,6 @@
  */
 package com.atlauncher.mclauncher;
 
-import com.atlauncher.App;
-import com.atlauncher.LogManager;
-import com.atlauncher.Update;
-import com.atlauncher.data.Account;
-import com.atlauncher.data.Instance;
-import com.atlauncher.data.mojang.auth.AuthenticationResponse;
-import com.atlauncher.utils.Utils;
-
 import java.applet.Applet;
 import java.awt.Dimension;
 import java.io.File;
@@ -44,6 +36,14 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
+
+import com.atlauncher.App;
+import com.atlauncher.LogManager;
+import com.atlauncher.Update;
+import com.atlauncher.data.Account;
+import com.atlauncher.data.Instance;
+import com.atlauncher.data.mojang.auth.AuthenticationResponse;
+import com.atlauncher.utils.Utils;
 
 public class LegacyMCLauncher {
 

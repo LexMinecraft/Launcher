@@ -18,13 +18,13 @@
 
 package com.atlauncher;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 import com.atlauncher.evnt.LogEvent;
 import com.atlauncher.evnt.LogEvent.LogType;
 import com.atlauncher.thread.LoggingThread;
 import com.atlauncher.utils.Utils;
-
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 public final class LogManager {
     private static final BlockingQueue<LogEvent> queue = new ArrayBlockingQueue<LogEvent>(128);

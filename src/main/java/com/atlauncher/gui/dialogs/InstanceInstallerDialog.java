@@ -17,23 +17,6 @@
  */
 package com.atlauncher.gui.dialogs;
 
-import com.atlauncher.App;
-import com.atlauncher.data.Instance;
-import com.atlauncher.data.Language;
-import com.atlauncher.data.Pack;
-import com.atlauncher.data.PackVersion;
-import com.atlauncher.utils.Utils;
-import com.atlauncher.workers.InstanceInstaller;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -47,6 +30,24 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JTextField;
+
+import com.atlauncher.App;
+import com.atlauncher.data.Instance;
+import com.atlauncher.data.Language;
+import com.atlauncher.data.Pack;
+import com.atlauncher.data.PackVersion;
+import com.atlauncher.utils.Utils;
+import com.atlauncher.workers.InstanceInstaller;
 
 public class InstanceInstallerDialog extends JDialog {
     private static final long serialVersionUID = -6984886874482721558L;

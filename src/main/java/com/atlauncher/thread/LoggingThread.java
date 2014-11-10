@@ -18,17 +18,17 @@
 
 package com.atlauncher.thread;
 
-import com.atlauncher.App;
-import com.atlauncher.evnt.LogEvent;
-import com.atlauncher.utils.Timestamper;
-import com.atlauncher.writer.LogEventWriter;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.BlockingQueue;
+
+import com.atlauncher.App;
+import com.atlauncher.evnt.LogEvent;
+import com.atlauncher.utils.Timestamper;
+import com.atlauncher.writer.LogEventWriter;
 
 public final class LoggingThread extends Thread {
     private final LogEventWriter writer;

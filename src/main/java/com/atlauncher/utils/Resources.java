@@ -18,9 +18,6 @@
 
 package com.atlauncher.utils;
 
-import com.atlauncher.exceptions.ChunkyException;
-
-import javax.swing.text.html.StyleSheet;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.io.InputStreamReader;
@@ -28,6 +25,10 @@ import java.io.Reader;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.swing.text.html.StyleSheet;
+
+import com.atlauncher.exceptions.ChunkyException;
 
 public final class Resources {
     private static final Map<String, Object> resources = new HashMap<String, Object>();

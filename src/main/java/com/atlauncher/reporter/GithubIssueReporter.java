@@ -18,16 +18,16 @@
 
 package com.atlauncher.reporter;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.atlauncher.App;
 import com.atlauncher.LogManager;
 import com.atlauncher.data.APIResponse;
 import com.atlauncher.data.Settings;
 import com.atlauncher.thread.PasteUpload;
 import com.atlauncher.utils.Utils;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public final class GithubIssueReporter {
     private GithubIssueReporter() {

@@ -17,20 +17,6 @@
  */
 package com.atlauncher.data;
 
-import com.atlauncher.App;
-import com.atlauncher.Gsons;
-import com.atlauncher.LogManager;
-import com.atlauncher.data.mojang.api.MinecraftProfileResponse;
-import com.atlauncher.data.mojang.auth.AuthenticationResponse;
-import com.atlauncher.gui.dialogs.ProgressDialog;
-import com.atlauncher.gui.tabs.InstancesTab;
-import com.atlauncher.gui.tabs.PacksTab;
-import com.atlauncher.utils.Authentication;
-import com.atlauncher.utils.Utils;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -46,6 +32,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+import com.atlauncher.App;
+import com.atlauncher.Gsons;
+import com.atlauncher.LogManager;
+import com.atlauncher.data.mojang.api.MinecraftProfileResponse;
+import com.atlauncher.data.mojang.auth.AuthenticationResponse;
+import com.atlauncher.gui.dialogs.ProgressDialog;
+import com.atlauncher.gui.tabs.InstancesTab;
+import com.atlauncher.gui.tabs.PacksTab;
+import com.atlauncher.utils.Authentication;
+import com.atlauncher.utils.Utils;
 
 /**
  * This class deals with the Accounts in the launcher.

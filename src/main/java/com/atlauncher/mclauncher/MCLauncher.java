@@ -17,15 +17,6 @@
  */
 package com.atlauncher.mclauncher;
 
-import com.atlauncher.App;
-import com.atlauncher.LogManager;
-import com.atlauncher.data.Account;
-import com.atlauncher.data.Instance;
-import com.atlauncher.data.mojang.auth.AuthenticationResponse;
-import com.atlauncher.data.mojang.auth.UserType;
-import com.atlauncher.utils.Utils;
-import com.google.gson.Gson;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,6 +25,15 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+
+import com.atlauncher.App;
+import com.atlauncher.LogManager;
+import com.atlauncher.data.Account;
+import com.atlauncher.data.Instance;
+import com.atlauncher.data.mojang.auth.AuthenticationResponse;
+import com.atlauncher.data.mojang.auth.UserType;
+import com.atlauncher.utils.Utils;
+import com.google.gson.Gson;
 
 public class MCLauncher {
 

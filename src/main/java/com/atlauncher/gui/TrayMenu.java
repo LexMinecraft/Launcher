@@ -17,6 +17,15 @@
  */
 package com.atlauncher.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
+
 import com.atlauncher.App;
 import com.atlauncher.data.Language;
 import com.atlauncher.evnt.listener.ConsoleCloseListener;
@@ -26,18 +35,11 @@ import com.atlauncher.evnt.manager.ConsoleCloseManager;
 import com.atlauncher.evnt.manager.ConsoleOpenManager;
 import com.atlauncher.evnt.manager.RelocalizationManager;
 
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
-import javax.swing.SwingUtilities;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public final class TrayMenu extends JPopupMenu implements RelocalizationListener, ConsoleCloseListener,
         ConsoleOpenListener {
 
     private final JMenuItem killMCButton = new JMenuItem();
-    private final JMenuItem tcButton = new JMenuItem();
+    private final JCheckBoxMenuItem tcButton = new JCheckBoxMenuItem();
     private final JMenuItem quitButton = new JMenuItem();
 
     public TrayMenu() {
@@ -87,7 +89,7 @@ public final class TrayMenu extends JPopupMenu implements RelocalizationListener
         this.tcButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                App.settings.getConsole().setVisible(!App.settings.getConsole().isVisible());
+                App.settings.getConsole().setVisible(tcButton.getState());
             }
         });
         this.quitButton.addActionListener(new ActionListener() {
@@ -109,22 +111,18 @@ public final class TrayMenu extends JPopupMenu implements RelocalizationListener
 
     @Override
     public void onConsoleClose() {
-        this.tcButton.setText(Language.INSTANCE.localize("console.show"));
+    	this.tcButton.setState(false);
     }
 
     @Override
     public void onConsoleOpen() {
-        this.tcButton.setText(Language.INSTANCE.localize("console.hide"));
+        this.tcButton.setState(true);
     }
 
     @Override
     public void onRelocalization() {
         this.killMCButton.setText(Language.INSTANCE.localize("console.kill"));
         this.quitButton.setText(Language.INSTANCE.localize("common.quit"));
-        if (App.settings.getConsole().isVisible()) {
-            this.tcButton.setText(Language.INSTANCE.localize("console.hide"));
-        } else {
-            this.tcButton.setText(Language.INSTANCE.localize("console.show"));
-        }
+        this.tcButton.setText(Language.INSTANCE.localize("console.show"));
     }
 }

@@ -18,14 +18,15 @@
 
 package com.atlauncher.gui.theme;
 
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.UIManager;
+
 import com.atlauncher.LogManager;
 import com.atlauncher.utils.Resources;
 import com.atlauncher.utils.Utils;
-
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.BorderFactory;
-import javax.swing.UIManager;
 
 public final class Theme {
     public static final Theme DEFAULT_THEME = new Theme("LexLauncher", "Lexteam", false, new Color(40, 45,

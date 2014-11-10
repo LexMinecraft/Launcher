@@ -18,10 +18,11 @@
 
 package com.atlauncher.gui.components;
 
+import java.awt.Color;
+
 import javax.swing.JTextPane;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
-import java.awt.Color;
 
 public final class Console extends JTextPane {
     /**

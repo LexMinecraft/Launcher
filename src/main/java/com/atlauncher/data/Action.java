@@ -17,11 +17,11 @@
  */
 package com.atlauncher.data;
 
-import com.atlauncher.utils.Utils;
-import com.atlauncher.workers.InstanceInstaller;
-
 import java.io.File;
 import java.util.ArrayList;
+
+import com.atlauncher.utils.Utils;
+import com.atlauncher.workers.InstanceInstaller;
 
 public class Action {
     private ArrayList<Mod> mod;

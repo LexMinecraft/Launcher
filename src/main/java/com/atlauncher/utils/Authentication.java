@@ -17,6 +17,16 @@
  */
 package com.atlauncher.utils;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.UUID;
+
 import com.atlauncher.App;
 import com.atlauncher.Gsons;
 import com.atlauncher.LogManager;
@@ -29,16 +39,6 @@ import com.atlauncher.data.mojang.auth.RefreshRequest;
 import com.atlauncher.data.mojang.auth.ValidateRequest;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.UUID;
 
 public class Authentication {
     public static AuthenticationResponse checkAccount(String username, String password) {

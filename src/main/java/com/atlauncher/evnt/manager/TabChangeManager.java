@@ -18,11 +18,12 @@
 
 package com.atlauncher.evnt.manager;
 
-import com.atlauncher.evnt.listener.TabChangeListener;
-
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.swing.SwingUtilities;
+
+import com.atlauncher.evnt.listener.TabChangeListener;
 
 public final class TabChangeManager {
     private static final List<TabChangeListener> listeners = new LinkedList<TabChangeListener>();

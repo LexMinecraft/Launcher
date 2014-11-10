@@ -1,16 +1,8 @@
 package io.github.asyncronous.toast.ui;
 
-import com.atlauncher.utils.Utils;
 import io.github.asyncronous.toast.ToasterConstants;
 import io.github.asyncronous.toast.thread.ToastAnimator;
 
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JWindow;
-import javax.swing.UIManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +12,16 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JWindow;
+import javax.swing.UIManager;
+
+import com.atlauncher.utils.Utils;
 
 /**
  * Main Toaster Notification class

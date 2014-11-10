@@ -17,23 +17,6 @@
  */
 package com.atlauncher.data;
 
-import com.atlauncher.App;
-import com.atlauncher.Gsons;
-import com.atlauncher.LogManager;
-import com.atlauncher.data.mojang.auth.AuthenticationResponse;
-import com.atlauncher.data.openmods.OpenEyeReportResponse;
-import com.atlauncher.gui.dialogs.ProgressDialog;
-import com.atlauncher.mclauncher.LegacyMCLauncher;
-import com.atlauncher.mclauncher.MCLauncher;
-import com.atlauncher.utils.Authentication;
-import com.atlauncher.utils.Utils;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -47,6 +30,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+
+import com.atlauncher.App;
+import com.atlauncher.Gsons;
+import com.atlauncher.LogManager;
+import com.atlauncher.data.mojang.auth.AuthenticationResponse;
+import com.atlauncher.data.openmods.OpenEyeReportResponse;
+import com.atlauncher.gui.dialogs.ProgressDialog;
+import com.atlauncher.mclauncher.LegacyMCLauncher;
+import com.atlauncher.mclauncher.MCLauncher;
+import com.atlauncher.utils.Authentication;
+import com.atlauncher.utils.Utils;
 
 /**
  * This class handles contains information about a single Instance in the Launcher. An Instance being an installed

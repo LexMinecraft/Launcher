@@ -17,16 +17,6 @@
  */
 package com.atlauncher;
 
-import com.atlauncher.data.Constants;
-import com.atlauncher.data.Instance;
-import com.atlauncher.data.Settings;
-import com.atlauncher.gui.LauncherFrame;
-import com.atlauncher.gui.SplashScreen;
-import com.atlauncher.gui.TrayMenu;
-import com.atlauncher.gui.dialogs.SetupDialog;
-import com.atlauncher.gui.theme.Theme;
-import com.atlauncher.utils.Utils;
-
 import io.github.asyncronous.toast.Toaster;
 
 import java.awt.Image;
@@ -45,12 +35,23 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 import javax.swing.InputMap;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 import javax.swing.text.DefaultEditorKit;
+
+import com.atlauncher.data.Constants;
+import com.atlauncher.data.Instance;
+import com.atlauncher.data.Settings;
+import com.atlauncher.gui.LauncherFrame;
+import com.atlauncher.gui.SplashScreen;
+import com.atlauncher.gui.TrayMenu;
+import com.atlauncher.gui.dialogs.SetupDialog;
+import com.atlauncher.gui.theme.Theme;
+import com.atlauncher.utils.Utils;
 
 public class App {
     public static final ExecutorService TASKPOOL = Executors.newFixedThreadPool(2);

@@ -18,9 +18,6 @@
 
 package com.atlauncher.thread;
 
-import com.atlauncher.App;
-import com.atlauncher.data.Constants;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,6 +25,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.concurrent.Callable;
+
+import com.atlauncher.App;
+import com.atlauncher.data.Constants;
 
 public final class PasteUpload implements Callable<String> {
     @Override

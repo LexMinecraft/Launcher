@@ -17,16 +17,16 @@
  */
 package com.atlauncher.data;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import com.atlauncher.App;
 import com.atlauncher.annot.Json;
 import com.atlauncher.data.mojang.MojangConstants;
 import com.atlauncher.data.mojang.MojangVersion;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 /**
  * TODO: Rewrite along with {@link com.atlauncher.data.Version} {@link com.atlauncher.data.LauncherVersion}

@@ -17,20 +17,6 @@
  */
 package com.atlauncher.gui.tabs.settings;
 
-import com.atlauncher.App;
-import com.atlauncher.data.Language;
-import com.atlauncher.evnt.listener.RelocalizationListener;
-import com.atlauncher.evnt.manager.RelocalizationManager;
-import com.atlauncher.gui.components.JLabelWithHover;
-import com.atlauncher.utils.Utils;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -39,6 +25,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.atlauncher.App;
+import com.atlauncher.data.Language;
+import com.atlauncher.evnt.listener.RelocalizationListener;
+import com.atlauncher.evnt.manager.RelocalizationManager;
+import com.atlauncher.gui.components.JLabelWithHover;
+import com.atlauncher.utils.Utils;
 
 @SuppressWarnings("serial")
 public class JavaSettingsTab extends AbstractSettingsTab implements RelocalizationListener {

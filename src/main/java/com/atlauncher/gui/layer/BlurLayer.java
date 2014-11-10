@@ -23,6 +23,7 @@ import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.beans.PropertyChangeEvent;
+
 import javax.swing.JComponent;
 import javax.swing.JLayer;
 import javax.swing.JPanel;

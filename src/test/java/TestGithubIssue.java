@@ -1,5 +1,6 @@
-import com.atlauncher.reporter.GithubIssue;
 import org.junit.Test;
+
+import com.atlauncher.reporter.GithubIssue;
 
 public final class TestGithubIssue{
     @Test

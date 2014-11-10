@@ -17,20 +17,6 @@
  */
 package com.atlauncher.gui.dialogs;
 
-import com.atlauncher.App;
-import com.atlauncher.data.DisableableMod;
-import com.atlauncher.data.Instance;
-import com.atlauncher.data.Language;
-import com.atlauncher.gui.components.ModsJCheckBox;
-import com.atlauncher.utils.Utils;
-
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -40,6 +26,21 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.SwingConstants;
+
+import com.atlauncher.App;
+import com.atlauncher.data.DisableableMod;
+import com.atlauncher.data.Instance;
+import com.atlauncher.data.Language;
+import com.atlauncher.gui.components.ModsJCheckBox;
+import com.atlauncher.utils.Utils;
 
 public class EditModsDialog extends JDialog {
     private static final long serialVersionUID = 7004414192679481818L;

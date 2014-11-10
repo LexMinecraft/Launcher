@@ -2,15 +2,16 @@ package io.github.asyncronous.toast;
 
 import io.github.asyncronous.toast.ui.ToastWindow;
 
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 /**
  * Static class to allow easier use of toaster notifications
