@@ -196,26 +196,26 @@ public class Settings {
     }
 
     public void setupFiles() {
-        baseDir = Utils.getCoreGracefully();
+        baseDir = Utils.getCoreDir();
         usersDownloadsFolder = new File(System.getProperty("user.home"), "Downloads");
-        logsDir = new File(baseDir, "Logs");
-        backupsDir = new File(baseDir, "Backups");
-        configsDir = new File(baseDir, "Configs");
-        themesDir = new File(configsDir, "Themes");
+        logsDir = new File(baseDir, "logs");
+        backupsDir = new File(baseDir, "backups");
+        configsDir = new File(baseDir, "configs");
+        themesDir = new File(configsDir, "themes");
         jsonDir = new File(configsDir, "JSON");
-        versionsDir = new File(configsDir, "Versions");
-        imagesDir = new File(configsDir, "Images");
-        skinsDir = new File(imagesDir, "Skins");
-        jarsDir = new File(configsDir, "Jars");
-        commonConfigsDir = new File(configsDir, "Common");
+        versionsDir = new File(configsDir, "versions");
+        imagesDir = new File(configsDir, "images");
+        skinsDir = new File(imagesDir, "skins");
+        jarsDir = new File(configsDir, "jars");
+        commonConfigsDir = new File(configsDir, "common");
         resourcesDir = new File(configsDir, "Resources");
         librariesDir = new File(configsDir, "Libraries");
         languagesDir = new File(configsDir, "Languages");
-        downloadsDir = new File(baseDir, "Downloads");
-        instancesDir = new File(baseDir, "Instances");
-        serversDir = new File(baseDir, "Servers");
-        tempDir = new File(baseDir, "Temp");
-        failedDownloadsDir = new File(baseDir, "FailedDownloads");
+        downloadsDir = new File(baseDir, "downloads");
+        instancesDir = new File(baseDir, "instances");
+        serversDir = new File(baseDir, "servers");
+        tempDir = new File(baseDir, "temp");
+        failedDownloadsDir = new File(baseDir, "failedDownloads");
         instancesDataFile = new File(configsDir, "instancesdata");
         checkingServersFile = new File(configsDir, "checkingservers.json");
         userDataFile = new File(configsDir, "userdata");

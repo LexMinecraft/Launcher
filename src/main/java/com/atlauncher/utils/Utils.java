@@ -130,7 +130,7 @@ public class Utils {
         return new ImageIcon(url);
     }
 
-    public static File getCoreGracefully() {
+    public static File getCoreDir() {
     	return new File(System.getProperty("user.home"), ".lexlauncher");
     }
 

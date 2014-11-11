@@ -63,8 +63,6 @@ implements RelocalizationListener{
 
     public LauncherFrame(boolean show) {
         LogManager.info("Launcher opening");
-        LogManager.info("Made By Bob*");
-        LogManager.info("*(Not Actually)");
 
         App.settings.setParentFrame(this);
         setSize(new Dimension(1000, 575));
